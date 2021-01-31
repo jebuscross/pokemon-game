@@ -28,7 +28,7 @@
   color: #61dafb;
 }
 
-.flex {
+.App.flex {
   display: flex;
   justify-content: center;
   align-items: center;
