@@ -1,23 +1,23 @@
-// import React, { useState } from "react";
-// import ReactDOM from "react-dom";
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
-// const App = () => {
-//   const [count, setCount] = useState([1]);
+const App = () => {
+  const [count, setCount] = useState([1]);
 
-//   const handleClick = () => {
-//     count.push(count.length + 1);
-//     setCount((prevState) => {
-//       prevState.push(prevState.length + 1);
-//       return [...prevState];
-//     });
-//   };
+  const handleClick = () => {
+    count.push(count.length + 1);
+    setCount((prevState) => {
+      prevState.push(prevState.length + 1);
+      return [...prevState];
+    });
+  };
 
-//   return (
-//     <div>
-//       <div>{count}</div>
-//       <div>
-//         <button onClick={handleClick}>Click</button>
-//       </div>
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <div>{count}</div>
+      <div>
+        <button onClick={handleClick}>Click</button>
+      </div>
+    </div>
+  );
+};

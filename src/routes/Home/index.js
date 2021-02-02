@@ -1,14 +1,14 @@
-import AboutLayoutBg from "./assets/layout/bg1.jpg";
-import CardsLayoutBg from "./assets/layout/bg2.jpeg";
-import RulesLayoutBg from "./assets/layout/bg3.jpg";
+import AboutLayoutBg from "../../assets/layout/bg1.jpg";
+import CardsLayoutBg from "../../assets/layout/bg2.jpeg";
+import RulesLayoutBg from "../../assets/layout/bg3.jpg";
 
 import React from "react";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Layout from "./Components/Layout";
-import PokemonCard from "./Components/PokemonCard";
-import data from "./shared/data/pokemoncards.json";
-import "./HomePage.css";
+import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
+import Layout from "../../Components/Layout";
+import PokemonCard from "../../Components/PokemonCard";
+import data from "../../shared/data/pokemoncards.json";
+import "../../App.css";
 
 const HomePage = ({ onChangePage }) => {
   const handleClickButton = (page) => {
