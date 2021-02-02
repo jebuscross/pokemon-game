@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import Layout from './Components/Layout';
-import PokemonCard from './Components/PokemonCard';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import Layout from './Components/Layout/Layout';
+import PokemonCard from './Components/PokemonCard/PokemonCard';
 import data from './Components/pokemoncards.json';
 import './index.css';
 
