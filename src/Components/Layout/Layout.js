@@ -1,40 +1,33 @@
-import React from 'react';
-import styles from './layout.module.css';
+import { string, node } from "prop-types";
+import s from "./layout.module.css";
 
-const Layout = ({ id, title = 'title', descr, urlBg, colorBg }) => {
+const Layout = ({ id, title, urlBg, colorBg, children }) => {
+  const sectionStyle = {};
+
+  if (urlBg) sectionStyle.backgroundImage = `url(${urlBg})`;
+  if (colorBg) sectionStyle.backgroundColor = colorBg;
+
   return (
-    <section
-      className={styles.root}
-      style={{
-        backgroundImage: urlBg !== undefined ? urlBg : '',
-        backgroundColor: colorBg !== undefined ? colorBg : '',
-      }}
-      id={
-        id !== undefined
-          ? id
-          : console.error('No id provided for component Layout')
-      }>
-      <div className={styles.wrapper}>
+    <section className={s.root} id={id} style={sectionStyle}>
+      <div className={s.wrapper}>
         <article>
-          <div className={styles.title}>
-            <h3>
-              {title !== undefined
-                ? title
-                : console.error('No title provided for component Layout')}
-            </h3>
-            <span className={styles.separator}></span>
+          <div className={s.title}>
+            <h3>{title}</h3>
+            <span className={s.separator}></span>
           </div>
-          <div className={styles.desc + styles.full}>
-            <p>
-              {descr !== undefined
-                ? descr
-                : console.error('No description provided for component Layout')}
-            </p>
-          </div>
+          <div className={`${s.desc} ${s.full}`}>{children}</div>
         </article>
       </div>
     </section>
   );
+};
+
+Layout.propTypes = {
+  id: string.isRequired,
+  title: string.isRequired,
+  children: node.isRequired,
+  urlBg: string,
+  colorBg: string,
 };
 
 export default Layout;
