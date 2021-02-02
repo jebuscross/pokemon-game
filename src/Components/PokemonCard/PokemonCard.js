@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './pokemonCard.module.css';
-import cardBackBG from '../resourses/images/card-back-side.jpg';
+import cardBackBG from '../../resourses/images/card-back-side.jpg';
 
 export const PokemonCard = ({ name, img, id, type, values, ...props }) => {
   const [isShowCard, setIsShowCard] = useState(false);
