@@ -1,8 +1,12 @@
 import React from "react";
-import { string } from "prop-types";
-import styles from "./header.module.css";
+import { string, func } from "prop-types";
+import styles from "./style.module.css";
 
-const Header = ({ title, descr }) => {
+const Header = ({ title, descr, onClickButton }) => {
+  const handleClick = () => {
+    onClickButton && onClickButton("game");
+  };
+
   return (
     <header className={styles.root}>
       <div className={styles.forest}></div>
@@ -17,6 +21,7 @@ const Header = ({ title, descr }) => {
             ? descr
             : console.error("No description provided for component Header")}
         </p>
+        <button onClick={handleClick}>Start Game</button>
       </div>
     </header>
   );
@@ -25,6 +30,7 @@ const Header = ({ title, descr }) => {
 Header.propTypes = {
   title: string.isRequired,
   descr: string.isRequired,
+  onClickButton: func.isRequired,
 };
 
 export default Header;

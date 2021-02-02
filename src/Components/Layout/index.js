@@ -1,5 +1,5 @@
 import { string, node } from "prop-types";
-import s from "./layout.module.css";
+import s from "./style.module.css";
 
 const Layout = ({ id, title, urlBg, colorBg, children }) => {
   const sectionStyle = {};
