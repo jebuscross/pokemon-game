@@ -1,4 +1,4 @@
-css .menuContainer > .overlay,
+.menuContainer > .overlay,
 .menuContainer.active > .overlay {
   position: absolute;
   right: 0;
