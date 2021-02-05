@@ -9,6 +9,7 @@ import Layout from "../../Components/Layout";
 import PokemonCard from "../../Components/PokemonCard";
 import data from "../../shared/data/pokemoncards.json";
 import "../../App.css";
+import MenuHeader from "../../Components/MenuHeader";
 
 const HomePage = ({ onChangePage }) => {
   const handleClickButton = (page) => {
@@ -16,9 +17,10 @@ const HomePage = ({ onChangePage }) => {
   };
   return (
     <>
+      <MenuHeader />
       <Header
         title="Pokemon Game"
-        descr="It is a simple triple card game"
+        descr="It is a simple triple triad card game"
         onClickButton={handleClickButton}
       />
 
