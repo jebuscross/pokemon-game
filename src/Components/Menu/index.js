@@ -4,10 +4,10 @@ import cn from "classnames";
 import s from "./style.module.css";
 
 const MENU = [
-  { title: "HOME", to: "#welcome" },
-  { title: "GAME", to: "#game" },
-  { title: "ABOUT", to: "#about" },
-  { title: "CONTACT", to: "#contact" },
+  { title: "HOME", to: "/" },
+  { title: "GAME", to: "/game" },
+  { title: "ABOUT", to: "/about" },
+  { title: "CONTACT", to: "/contact" },
 ];
 
 const Menu = ({ isOpen }) => {

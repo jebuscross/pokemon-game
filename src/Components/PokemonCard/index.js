@@ -1,14 +1,13 @@
-import { useState } from "react";
 import { string, number, object } from "prop-types";
 import cn from "classnames";
 
 import cardBackSideBg from "../../assets/card-back-side.jpg";
 import s from "./style.module.css";
 
-const PokemonCard = ({ id, name, type, values, img, isActive }) => {
+const PokemonCard = ({ id, name, type, values, img, onClick, showBack }) => {
   return (
-    <div className={s.root} onClick={!isActive}>
-      <div className={cn(s.pokemonCard, { [s.active]: isActive })}>
+    <div className={s.root} onClick={onClick}>
+      <div className={cn(s.pokemonCard, { [s.active]: showBack })}>
         <div className={s.cardFront}>
           <div className={`${s.wrap} ${s.front}`}>
             <div className={`${s.pokemon} ${type}`}>

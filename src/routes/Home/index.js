@@ -17,7 +17,7 @@ const HomePage = ({ onChangePage }) => {
   };
   return (
     <>
-      <MenuHeader />
+      {/* <MenuHeader /> */}
       <Header
         title="Pokemon Game"
         descr="It is a simple triple triad card game"
@@ -35,7 +35,7 @@ const HomePage = ({ onChangePage }) => {
           blue.
         </p>
       </Layout>
-      <Layout title="Cards" id="cards" urlBg={CardsLayoutBg}>
+      {/* <Layout title="Cards" id="cards" urlBg={CardsLayoutBg}>
         <div className="flex">
           {data.map(({ id, name, type, values, img }) => (
             <PokemonCard
@@ -48,7 +48,7 @@ const HomePage = ({ onChangePage }) => {
             />
           ))}
         </div>
-      </Layout>
+      </Layout> */}
       <Layout title="Rules" urlBg={RulesLayoutBg} id="rules">
         <p>
           To win, a majority of the total ten cards played (including the one
