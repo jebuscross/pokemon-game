@@ -20,15 +20,17 @@ const App = () => {
       <Route>
         <>
           <MenuHeader bgActive={!match.isExact} />
-          <Switch>
-            <div className={cn(s.wrap, { [s.isHomePage]: match.isExact })}>
+
+          <div className={cn(s.wrap, { [s.isHomePage]: match.isExact })}>
+            <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path="/game" component={GamePage} />
               <Route path="/about" component={AboutPage} />
               <Route path="/contact" component={ContactPage} />
-              {/* <Route render={() => <Redirect to="/404" />} /> */}
-            </div>
-          </Switch>
+              {<Route render={() => <Redirect to="/404" />} />}
+            </Switch>
+          </div>
+
           <Footer />
         </>
       </Route>
