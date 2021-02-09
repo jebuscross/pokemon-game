@@ -15,8 +15,6 @@ firebase.initializeApp(firebaseConfig);
 
 class Firebase {
   constructor() {
-    firebase.initializeApp(firebaseConfig);
-
     this.fire = firebase;
     this.database = this.fire.database();
   }
@@ -27,12 +25,12 @@ class Firebase {
     });
   };
 
-  getPokemonsOnce = async () => {
-    return await this.database
-      .ref("pokemons")
-      .once("value")
-      .then((snapshot) => Object.entries(snapshot.val()));
-  };
+  // getPokemonsOnce = async () => {
+  //   return await this.database
+  //     .ref("pokemons")
+  //     .once("value")
+  //     .then((snapshot) => Object.entries(snapshot.val()));
+  // };
 
   postPokemon = (key, pokemon) => {
     this.database.ref(`pokemons/${key}`).set(pokemon);
@@ -43,7 +41,7 @@ class Firebase {
     this.database
       .ref("pokemons/" + newKey)
       .set(data)
-      .then(() => cb());
+      .then(() => cb);
   };
 }
 
