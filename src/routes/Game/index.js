@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Layout from "../../Components/Layout";
 import PokemonCard from "../../Components/PokemonCard";
 import CardsLayoutBg from "../../assets/layout/bg2.jpeg";
 
 import database from "../../services/firebase";
+import { FireBaseContext } from "../../context/firebaseContext";
 
 const pokemon1 = {
   abilities: ["keen-eye", "tangled-feet", "big-pecks"],
@@ -32,21 +33,14 @@ const pokemon1 = {
 };
 
 const GamePage = () => {
+  const firebase = useContext(FireBaseContext);
+  const [pokemons, setPokemons] = useState([]);
+
   useEffect(() => {
-    database.ref("pokemons").once("value", (snapshot) => {
-      const result = Object.entries(snapshot.val());
-      result.forEach((card) => {
-        if (!card[1].active) {
-          card[1].active = false;
-        }
-      });
-      console.log(result);
-      setPokemons(result);
-      console.log(setPokemons(result));
+    firebase.getPokemonSoket((pokemons) => {
+      setPokemons(pokemons);
     });
   }, []);
-
-  const [pokemons, setPokemons] = useState([]);
 
   const onClick = (id) => {
     setPokemons((prevState) => {
@@ -54,27 +48,21 @@ const GamePage = () => {
         if (card[1].id === id) {
           card[1].active = !card[1].active;
         }
+        firebase.postPokemon(card[0], card[1]);
         return card;
       });
     });
   };
 
-  const addPokemon = () => {
-    const pokemonRef = database.ref().child("pokemons").push(pokemon1);
-    const newKey = pokemonRef.key;
-    setPokemons((prevState) => {
-      // const pokemons = _.cloneDeep(prevState);
-      const pokemons = prevState;
-      pokemons.push([newKey, pokemon1]);
-
-      return [...pokemons];
-    });
+  const handleAddPokemon = () => {
+    const data = pokemon1;
+    firebase.addPokemon(data);
   };
 
   return (
     <>
       <Layout title="Cards" id="cards" urlBg={CardsLayoutBg}>
-        <button onClick={addPokemon}>Add Pokemon</button>
+        <button onClick={handleAddPokemon}>Add Pokemon</button>
         <div className="flex">
           {pokemons.map(([key, { id, name, type, values, img, active }]) => {
             return (
