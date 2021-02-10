@@ -7,7 +7,9 @@ import ContactPage from "./routes/Contact";
 import MenuHeader from "./Components/MenuHeader";
 import Footer from "./Components/Footer";
 
+import { FireBaseContext } from "./context/firebaseContext";
 import s from "./style.module.css";
+import Firebase from "./services/firebase";
 
 const App = () => {
   const notFound = () => <h1>404 Not Found</h1>;
@@ -15,26 +17,28 @@ const App = () => {
   const match = useRouteMatch("/");
 
   return (
-    <Switch>
-      <Route path="/404" render={notFound} />
-      <Route>
-        <>
-          <MenuHeader bgActive={!match.isExact} />
+    <FireBaseContext.Provider value={new Firebase()}>
+      <Switch>
+        <Route path="/404" render={notFound} />
+        <Route>
+          <>
+            <MenuHeader bgActive={!match.isExact} />
 
-          <div className={cn(s.wrap, { [s.isHomePage]: match.isExact })}>
-            <Switch>
-              <Route path="/" exact component={HomePage} />
-              <Route path="/game" component={GamePage} />
-              <Route path="/about" component={AboutPage} />
-              <Route path="/contact" component={ContactPage} />
-              {<Route render={() => <Redirect to="/404" />} />}
-            </Switch>
-          </div>
+            <div className={cn(s.wrap, { [s.isHomePage]: match.isExact })}>
+              <Switch>
+                <Route path="/" exact component={HomePage} />
+                <Route path="/game" component={GamePage} />
+                <Route path="/about" component={AboutPage} />
+                <Route path="/contact" component={ContactPage} />
+                {<Route render={() => <Redirect to="/404" />} />}
+              </Switch>
+            </div>
 
-          <Footer />
-        </>
-      </Route>
-    </Switch>
+            <Footer />
+          </>
+        </Route>
+      </Switch>
+    </FireBaseContext.Provider>
   );
 };
 
