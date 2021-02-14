@@ -21,6 +21,13 @@
   animation: stars-move-in 1000ms 300ms forwards;
 }
 
+.button {
+  color: #fff;
+  background: rgb(88, 12, 123);
+  padding: 0.7em 1.5em;
+  outline: none;
+}
+
 @keyframes stars-move-in {
   from {
     background-position-y: -100px;

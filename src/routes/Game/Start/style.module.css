@@ -1,6 +1,22 @@
-.root {
-  width: 268px;
-  height: 388px;
-  margin: 16px;
-  perspective: 1000px;
+.button {
+  color: #fff;
+  background: rgb(88, 12, 123);
+  padding: 0.7em 1.5em;
+  outline: none;
+}
+
+.flex {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 40px;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.card {
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
 }

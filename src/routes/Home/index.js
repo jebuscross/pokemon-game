@@ -1,30 +1,16 @@
-import AboutLayoutBg from "../../assets/layout/bg1.jpg";
-import CardsLayoutBg from "../../assets/layout/bg2.jpeg";
-import RulesLayoutBg from "../../assets/layout/bg3.jpg";
+import Header from "../../components/Header";
+import Layout from "../../components/Layout";
 
-import React from "react";
-import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
-import Layout from "../../Components/Layout";
-import PokemonCard from "../../Components/PokemonCard";
-import data from "../../shared/data/pokemoncards.json";
-import "../../App.css";
-import MenuHeader from "../../Components/MenuHeader";
+import Bg2JPG from "../../assets/bg2.jpg";
+import Bg3JPG from "../../assets/bg3.jpg";
 
-const HomePage = ({ onChangePage }) => {
-  const handleClickButton = (page) => {
-    onChangePage && onChangePage(page);
-  };
+// import s from './style.module.css';
+
+const HomePage = () => {
   return (
     <>
-      {/* <MenuHeader /> */}
-      <Header
-        title="Pokemon Game"
-        descr="It is a simple triple triad card game"
-        onClickButton={handleClickButton}
-      />
-
-      <Layout title="About" id="about" urlBg={AboutLayoutBg}>
+      <Header title="This is title" descr="This is Description!" />
+      <Layout id="1" title="Title 1" urlBg={Bg2JPG}>
         <p>
           In the game two players face off against one another, one side playing
           as "blue", the other as "red" on a 3x3 grid.
@@ -35,21 +21,7 @@ const HomePage = ({ onChangePage }) => {
           blue.
         </p>
       </Layout>
-      {/* <Layout title="Cards" id="cards" urlBg={CardsLayoutBg}>
-        <div className="flex">
-          {data.map(({ id, name, type, values, img }) => (
-            <PokemonCard
-              key={id}
-              id={id}
-              name={name}
-              type={type}
-              values={values}
-              img={img}
-            />
-          ))}
-        </div>
-      </Layout> */}
-      <Layout title="Rules" urlBg={RulesLayoutBg} id="rules">
+      <Layout id="3" title="Title 2" urlBg={Bg3JPG}>
         <p>
           To win, a majority of the total ten cards played (including the one
           card that is not placed on the board) must be of the player's card
@@ -62,7 +34,6 @@ const HomePage = ({ onChangePage }) => {
           the player's color instead.
         </p>
       </Layout>
-      <Footer />
     </>
   );
 };

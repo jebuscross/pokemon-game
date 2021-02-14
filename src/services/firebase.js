@@ -13,16 +13,20 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-class Firebase {
+export class Firebase {
   constructor() {
     this.fire = firebase;
     this.database = this.fire.database();
   }
 
-  getPokemonSoket = (cb) => {
+  getPokemonSocket = (cb) => {
     this.database.ref("pokemons").on("value", (snapshot) => {
-      cb(Object.entries(snapshot.val()));
+      cb(snapshot.val());
     });
+  };
+
+  offPokemonSocket = () => {
+    this.database.ref("pokemons").off();
   };
 
   // getPokemonsOnce = async () => {
@@ -44,5 +48,3 @@ class Firebase {
       .then(() => cb);
   };
 }
-
-export default Firebase;

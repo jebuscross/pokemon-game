@@ -1,6 +1,6 @@
-import Navbar from "../Navbar";
+import { useState } from "react";
 import Menu from "../Menu";
-import React, { useState } from "react";
+import NavBar from "../Navbar";
 
 const MenuHeader = ({ bgActive }) => {
   const [isOpen, setOpen] = useState(null);
@@ -8,14 +8,14 @@ const MenuHeader = ({ bgActive }) => {
   const handleClickHamburger = () => {
     setOpen((prevState) => !prevState);
   };
-
   return (
     <>
-      <Menu isOpen={isOpen} />
-      <Navbar
+      <Menu isOpen={isOpen} onClickMenu={handleClickHamburger} />
+      <NavBar
         isOpen={isOpen}
         bgActive={bgActive}
-        onClickHamburg={handleClickHamburger}></Navbar>
+        onClickHamburger={handleClickHamburger}
+      />
     </>
   );
 };

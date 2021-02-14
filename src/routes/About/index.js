@@ -1,4 +1,4 @@
-import MenuHeader from "../../Components/MenuHeader";
+import MenuHeader from "../../components/MenuHeader";
 
 const AboutPage = ({ onChangePage }) => {
   const handleClick = () => {
