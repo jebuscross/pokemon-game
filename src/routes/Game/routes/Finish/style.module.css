@@ -1,0 +1,42 @@
+.root {
+  height: calc(100vw / 1.71);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.playerOne {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.playerTwo {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cardBoard {
+  width: 100%;
+  height: 22vw;
+  max-width: 18vw;
+  margin-top: 2vw;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.cardBoard.selected {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  color: #fff;
+  background: rgb(88, 12, 123);
+  padding: 0.7em 2.5em;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}

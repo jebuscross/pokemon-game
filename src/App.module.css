@@ -1,6 +1,6 @@
 .wrap {
   min-height: calc(100vp - 100px);
-  padding: 96px 32px 24px;
+  padding: 72px 28px 20px;
 }
 
 .wrap.isHomePage {

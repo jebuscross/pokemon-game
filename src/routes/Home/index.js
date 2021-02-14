@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <>
       <Header title="This is title" descr="This is Description!" />
-      <Layout id="1" title="Title 1" urlBg={Bg2JPG}>
+      <Layout id="1" title="About" urlBg={Bg2JPG}>
         <p>
           In the game two players face off against one another, one side playing
           as "blue", the other as "red" on a 3x3 grid.
@@ -21,7 +21,7 @@ const HomePage = () => {
           blue.
         </p>
       </Layout>
-      <Layout id="3" title="Title 2" urlBg={Bg3JPG}>
+      <Layout id="3" title="Rules" urlBg={Bg3JPG}>
         <p>
           To win, a majority of the total ten cards played (including the one
           card that is not placed on the board) must be of the player's card

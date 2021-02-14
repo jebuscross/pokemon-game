@@ -45,6 +45,6 @@ export class Firebase {
     this.database
       .ref("pokemons/" + newKey)
       .set(data)
-      .then(() => cb);
+      .then(() => cb());
   };
 }

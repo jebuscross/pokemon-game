@@ -2,9 +2,12 @@
   font-size: 1.4rem;
   position: relative;
   background: #fafafa;
-  clip-path: polygon(0 0, 20% 5%, 100% 0, 100% 100%, 80% 95%, 0 100%);
+  clip-path: polygon(0 0, 20% 3%, 100% 0, 100% 100%, 80% 95%, 0 100%);
   z-index: 5;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
 }
 
 .root .wrapper {
@@ -16,8 +19,8 @@
 .root article {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
-  padding: 3rem 0;
+  grid-gap: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .root .title {
@@ -79,7 +82,7 @@
 }
 @media only screen and (max-width: 949px) {
   .root {
-    clip-path: polygon(0 0, 20% 2%, 100% 0, 100% 100%, 80% 98%, 0 100%);
+    clip-path: polygon(0 0, 20% 1%, 100% 0, 100% 100%, 80% 98%, 0 100%);
     background-position: top left;
     background-size: cover;
   }
