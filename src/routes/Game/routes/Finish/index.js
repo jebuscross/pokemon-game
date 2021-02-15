@@ -39,6 +39,7 @@ const FinfshPage = () => {
           {Object.values(pokemonsContext.pokemons).map(
             ({ name, type, img, id, values }) => (
               <PokemonCard
+                key={id}
                 className={s.cardBoard}
                 name={name}
                 type={type}
