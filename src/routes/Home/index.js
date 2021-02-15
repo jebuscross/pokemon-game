@@ -9,7 +9,7 @@ import Bg3JPG from "../../assets/bg3.jpg";
 const HomePage = () => {
   return (
     <>
-      <Header title="This is title" descr="This is Description!" />
+      <Header title="Pokemon Game" descr="This is a simple triple triad game" />
       <Layout id="1" title="About" urlBg={Bg2JPG}>
         <p>
           In the game two players face off against one another, one side playing

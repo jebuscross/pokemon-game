@@ -1,16 +1,7 @@
-import MenuHeader from "../../components/MenuHeader";
-
-const AboutPage = ({ onChangePage }) => {
-  const handleClick = () => {
-    onChangePage && onChangePage("app");
-  };
+const AboutPage = () => {
   return (
     <>
-      <div>
-        This is About Page
-        <button onClick={handleClick}>Home Page</button>
-      </div>
-      <MenuHeader />
+      <div>This is About Page</div>
     </>
   );
 };
